@@ -132,7 +132,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         self.new_ui.save_exitButton.clicked.connect(self.new_user_inquiry_to_home)
         self.new_ui.past_inquiriesButton.clicked.connect(self.past_inquiries_page_display)
 
-    #AI HELP
+    #AI HELP TO CREATE INPUT BOXES AFTER ONLY HAD LINE EDIT WIDGET
     def create_score_inputs(self) -> None:
         """
         Creates score input boxes based on amount of test taken
