@@ -347,7 +347,7 @@ class Logic(QMainWindow, Ui_MainWindow):
         """
         Sets up the past inquiries window for Returning user
         """
-        if not self.is_submitted and self.user_status == "New User":
+        if not self.is_submitted:
             self.show_error(self.pastInquiries_new_ui.pastInjuries_infoLabel, "Submit an inquiry first to view history.")
             return
 
@@ -463,8 +463,7 @@ class Logic(QMainWindow, Ui_MainWindow):
             table.setItem(row_index, 3, QTableWidgetItem(row_data[6]))
 
         if len(student_matches) == 0:
-            self.setStyleSheet("color: red;")
-            self.pastInquiries_new_ui.pastInjuries_infoLabel.setText("Account not found!")
+            self.show_error(self.pastInquiries_new_ui.pastInjuries_infoLabel, "Account not found!")
             self.pastInquiries_new_ui.pastInquries_newInquiry_Button.setEnabled(False)
         else:
             self.show_success(self.pastInquiries_new_ui.pastInjuries_infoLabel, "Account found!")
